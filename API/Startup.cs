@@ -6,6 +6,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using API.Data;
+using API.Abstraction;
+using API.Implementation;
 
 namespace API
 {
@@ -26,6 +28,8 @@ namespace API
             {
                 options.UseSqlite(Configuration.GetConnectionString("DefaultConnection"));
             });
+
+            services.AddScoped<IUserFetcher, UserFetcher>();
 
             services.AddControllers();
             services.AddCors();
