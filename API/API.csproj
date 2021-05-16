@@ -18,5 +18,8 @@
     <ProjectReference Include="..\DbAccess\DbAccess.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
+    <ProjectReference Include="..\DbAccess\BusinessLogic\BusinessLogic.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
   </ItemGroup>
 </Project>

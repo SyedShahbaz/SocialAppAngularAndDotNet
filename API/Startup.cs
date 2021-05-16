@@ -6,6 +6,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using OperationContracts;
 using DbAccess;
+using BusinessLogic;
 
 namespace API
 {
@@ -22,8 +23,8 @@ namespace API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbServiceDependencies();
-            services.AddServiceDependencies();
-         
+            services.AddBlServiceDependencies();
+
             services.AddControllers();
             services.AddCors();
             services.AddSwaggerGen(c =>

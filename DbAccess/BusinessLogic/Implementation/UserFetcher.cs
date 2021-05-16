@@ -4,7 +4,7 @@ using DbAccess.Data;
 using DbAccess.DbModel;
 using OperationContracts.Abstraction;
 
-namespace OperationContracts.Implementation
+namespace BusinessLogic.Implementation
 {
     public class UserFetcher : IUserFetcher
     {
