@@ -17,4 +17,28 @@
   <ItemGroup>
     <ProjectReference Include="..\Configuration\Configuration.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="BusinessLogic\Class1.cs" />
+    <Compile Remove="BusinessLogic\Implementation\UserFetcher.cs" />
+    <Compile Remove="BusinessLogic\Implementation\UserFetcher.cs" />
+    <Compile Remove="BusinessLogic\BlServiceCollectionExtensions.cs" />
+    <Compile Remove="BusinessLogic\obj\Debug\net5.0\.NETCoreApp,Version=v5.0.AssemblyAttributes.cs" />
+    <Compile Remove="BusinessLogic\obj\Debug\net5.0\BusinessLogic.AssemblyInfo.cs" />
+    <Compile Remove="BusinessLogic\BlServiceCollectionExtensions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="BusinessLogic\obj\BusinessLogic.csproj.nuget.g.targets" />
+    <None Remove="BusinessLogic\obj\BusinessLogic.csproj.nuget.g.props" />
+    <None Remove="BusinessLogic\obj\project.nuget.cache" />
+    <None Remove="BusinessLogic\obj\BusinessLogic.csproj.nuget.dgspec.json" />
+    <None Remove="BusinessLogic\obj\project.assets.json" />
+    <None Remove="BusinessLogic\obj\Debug\net5.0\BusinessLogic.assets.cache" />
+    <None Remove="BusinessLogic\obj\Debug\net5.0\BusinessLogic.csprojAssemblyReference.cache" />
+    <None Remove="BusinessLogic\obj\Debug\net5.0\BusinessLogic.GeneratedMSBuildEditorConfig.editorconfig" />
+    <None Remove="BusinessLogic\obj\Debug\net5.0\BusinessLogic.AssemblyInfoInputs.cache" />
+    <None Remove="BusinessLogic\obj\Debug\net5.0\BusinessLogic.dll" />
+    <None Remove="BusinessLogic\obj\Debug\net5.0\BusinessLogic.pdb" />
+    <None Remove="BusinessLogic\obj\Debug\net5.0\ref\BusinessLogic.dll" />
+    <None Remove="BusinessLogic\obj\Debug\net5.0\BusinessLogic.csproj.FileListAbsolute.txt" />
+  </ItemGroup>
 </Project>
