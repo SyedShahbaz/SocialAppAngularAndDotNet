@@ -1,10 +1,10 @@
-using System.Collections.Generic;
-using API.Abstraction;
-using API.Entities;
-using API.Data;
+﻿using System.Collections.Generic;
 using System.Linq;
+using DbAccess.Data;
+using DbAccess.DbModel;
+using OperationContracts.Abstraction;
 
-namespace API.Implementation
+namespace OperationContracts.Implementation
 {
     public class UserFetcher : IUserFetcher
     {
@@ -20,9 +20,14 @@ namespace API.Implementation
             return _context.Users.Find(id);
         }
 
-        public  IEnumerable<AppUser> GetUsers()
+        public IEnumerable<AppUser> GetUsers()
         {
             return _context.Users.ToList();
+        }
+
+        public int Test()
+        {
+            return 5;
         }
     }
 }

@@ -1,13 +1,11 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
-using API.Data;
-using API.Abstraction;
-using API.Implementation;
+using OperationContracts;
+using DbAccess;
 
 namespace API
 {
@@ -23,14 +21,9 @@ namespace API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            // Add Database context..
-            services.AddDbContext<DataContext>(options => 
-            {
-                options.UseSqlite(Configuration.GetConnectionString("DefaultConnection"));
-            });
-
-            services.AddScoped<IUserFetcher, UserFetcher>();
-
+            services.AddDbServiceDependencies();
+            services.AddServiceDependencies();
+         
             services.AddControllers();
             services.AddCors();
             services.AddSwaggerGen(c =>

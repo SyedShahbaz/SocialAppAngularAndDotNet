@@ -1,10 +1,7 @@
 using System.Collections.Generic;
-using System.Threading.Tasks;
-using API.Abstraction;
-using API.Data;
-using API.Entities;
+using DbAccess.DbModel;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+using OperationContracts.Abstraction;
 
 namespace API.Controllers
 {
@@ -12,20 +9,17 @@ namespace API.Controllers
     [Route("api/[controller]")]
     public class UsersController : ControllerBase
     {
-        private readonly DataContext _context;
         private readonly IUserFetcher _fetcher;
 
-
-        public UsersController(DataContext context, IUserFetcher fetcher)
+        public UsersController( IUserFetcher fetcher)
         {
-            _context = context;
             _fetcher = fetcher;
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<AppUser>>> GetUsers() 
+        public IEnumerable<AppUser> GetUsers() 
         {
-            return await _context.Users.ToListAsync();
+            return  _fetcher.GetUsers();
         }
 
         [HttpGet("{id}")]
@@ -36,3 +30,6 @@ namespace API.Controllers
 
     }
 }
+
+// TODO
+// Add BusinessLogic project inside Components and move Contracts.Implementation.UserFetcher to that project.. 
